@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "projects/sytemap-js/node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,6 +98,68 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "sytemapjs": {
+      "projectType": "library",
+      "root": "projects/sytemapjs",
+      "sourceRoot": "projects/sytemapjs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sytemapjs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sytemapjs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sytemapjs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sytemapjs/src/test.ts",
+            "tsConfig": "projects/sytemapjs/tsconfig.spec.json",
+            "karmaConfig": "projects/sytemapjs/karma.conf.js"
+          }
+        }
+      }
+    },
+    "sytemap-js": {
+      "projectType": "library",
+      "root": "projects/sytemap-js",
+      "sourceRoot": "projects/sytemap-js/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sytemap-js/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sytemap-js/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sytemap-js/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sytemap-js/src/test.ts",
+            "tsConfig": "projects/sytemap-js/tsconfig.spec.json",
+            "karmaConfig": "projects/sytemap-js/karma.conf.js"
           }
         }
       }

@@ -16,6 +16,12 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "paths": {
+      "sytemap-js": [
+        "dist/sytemap-js"
+      ]
+
+    },
     "lib": [
       "es2018",
       "dom"
