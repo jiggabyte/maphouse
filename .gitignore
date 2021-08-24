@@ -8,7 +8,7 @@
 /bazel-out
 
 # dependencies
-/dist/node_modules
+/projects/sytemap-js/node_modules
 /node_modules
 
 # profiling files
