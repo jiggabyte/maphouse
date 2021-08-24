@@ -30,7 +30,9 @@
               "projects/sytemap-js/node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "projects/sytemap-js/node_modules/leaflet/dist/leaflet.js"
+            ]
           },
           "configurations": {
             "production": {
