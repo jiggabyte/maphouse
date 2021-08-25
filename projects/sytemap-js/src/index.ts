@@ -16,7 +16,7 @@ export const initMap = (elemId: string, layers: any = {}): any => {
 
 	const map = L.map(elemId, {
 		layers: mainBaseLayer
-	}).setView([9.065809, 7.394360], 3);
+	}).setView([0,0], 3);
 
 	layerControl = L.control.layers(baseLayers, {}, {collapsed:false});
 

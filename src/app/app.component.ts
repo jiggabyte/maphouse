@@ -11,7 +11,7 @@ import * as Sytemap from 'projects/sytemap-js/src';
 export class AppComponent implements OnInit,AfterViewInit{
   title = 'maphouse';
 
-  mapper?:any;
+  mapper:any;
 
  // latlong(9.065809, 7.394360)
 
