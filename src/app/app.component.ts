@@ -25,7 +25,7 @@ export class AppComponent implements OnInit,AfterViewInit{
   }
 
   ngAfterViewInit(){
-    this.mapper = Sytemap.initMap("mapDiv",{lat: 9.065809 , lng : 7.394360});
+    this.mapper = Sytemap.initMap('mapDiv',{});
   }
 
 
