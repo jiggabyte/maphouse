@@ -1,5 +1,20 @@
 import * as L from "leaflet";
 
+const iconRetinaUrl = './assets/marker-icon-2x.png';
+const iconUrl = './assets/marker-icon.png';
+const shadowUrl = './assets/marker-shadow.png';
+const iconDefault = L.icon({
+iconRetinaUrl,
+iconUrl,
+shadowUrl,
+iconSize: [25, 41],
+iconAnchor: [12, 41],
+popupAnchor: [1, -34],
+tooltipAnchor: [16, -28],
+shadowSize: [41, 41]
+});
+L.Marker.prototype.options.icon = iconDefault;
+
 export declare let layerControl: any;
 
 export const initMap = (elemId: string, layers: any = {}): any => {
@@ -24,7 +39,7 @@ export const initMap = (elemId: string, layers: any = {}): any => {
 
 	return {
 		"mapObject":map,
-		"layerControl":layerControl
+		"layerControl":layerControl,
 	};
 }
 
@@ -72,3 +87,25 @@ export const initFeatureGroup = (): any => {
 export const initLayerGroup = (): any => {
 	return L.layerGroup();
 }
+
+export const mapInit = (tup: any,map: string): any => {
+  const mapx = L.map(map, {
+    center: tup,
+    zoom: 3
+  });
+
+  const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      minZoom: 3,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    });
+
+    tiles.addTo(mapx);
+
+    return mapx;
+}
+
+export const initMarker = (tup: any,mapObject: any): any => {
+	return L.marker(tup).addTo(mapObject);
+}
+

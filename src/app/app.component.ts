@@ -9,7 +9,7 @@ import * as Sytemap from 'projects/sytemap-js/src';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit,AfterViewInit{
-  title = 'maphouse';
+  title = 'MapHouse';
 
   mapper:any;
 
@@ -25,7 +25,21 @@ export class AppComponent implements OnInit,AfterViewInit{
   }
 
   ngAfterViewInit(){
-    this.mapper = Sytemap.initMap('mapDiv',{lat: 9.065809,lng: 7.394360});
+    this.loadMap();
+  }
+
+  loadMap(){
+
+    //this.mapper = Sytemap.initMap('mapDiv',{lat: 9.065809,lng: 7.394360});
+    //Sytemap.initMarker([9.065809, 7.394360],this.mapper().mapObject);
+
+    // L.marker([9.065809, 7.394360]).addTo(this.mapper.mapObject);
+
+    const map = Sytemap.mapInit([9.065809, 7.394360],'mapDiv');
+
+    Sytemap.initMarker([9.065809, 7.394360],map);
+
+
   }
 
 
