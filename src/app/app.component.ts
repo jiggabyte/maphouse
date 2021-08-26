@@ -33,8 +33,6 @@ export class AppComponent implements OnInit,AfterViewInit{
     //this.mapper = Sytemap.initMap('mapDiv',{lat: 9.065809,lng: 7.394360});
     //Sytemap.initMarker([9.065809, 7.394360],this.mapper().mapObject);
 
-    // L.marker([9.065809, 7.394360]).addTo(this.mapper.mapObject);
-
     const map = Sytemap.mapInit([9.065809, 7.394360],'mapDiv');
 
     Sytemap.initMarker([9.065809, 7.394360],map);
